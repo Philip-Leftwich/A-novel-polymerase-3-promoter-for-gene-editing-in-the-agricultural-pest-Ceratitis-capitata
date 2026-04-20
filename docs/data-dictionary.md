@@ -5,7 +5,7 @@ This document describes all datasets, variables, and file formats used in the 7S
 ## Primary Dataset: `seqs_7sk.csv`
 
 **Source**: Manual curation from genomic databases  
-**Format**: CSV (Comma-separated values)  
+**Format**: CSV (Comma-separated values) and TSV (Tab-separated values)  
 **Location**: `data/raw/seqs_7sk.csv`  
 **Encoding**: UTF-8  
 
@@ -66,6 +66,7 @@ This document describes all datasets, variables, and file formats used in the 7S
 **Location**: `data/raw/sequencing_data/`  
 **Format**: FASTQ (gzip compressed)  
 **Sequencing**: Paired-end Illumina sequencing  
+**Public Access**: European Nucleotide Archive (ENA) project accession PRJEB111759  
 
 ### Files
 
@@ -87,6 +88,7 @@ This dataset follows elements of:
 
 - **Genomic sequences**: Retrieved from NCBI Genome database
 - **Reference assemblies**: Latest available genome assemblies as of April 2026
+- **Sequencing data**: Generated at University of East Anglia sequencing facility; submitted to ENA under project PRJEB111759
 - **Plasmid sequences**: Designed and synthesized for this study
 
 ### Missing Data Handling
@@ -96,6 +98,12 @@ This dataset follows elements of:
 - Ambiguous nucleotides: Retained as 'N' characters where present
 
 ## File Format Specifications
+
+### CSV/TSV
+- Standard comma-separated values (CSV) or tab-separated values (TSV)
+- UTF-8 encoding
+- Header row with column names
+- Suitable for cross-platform data exchange
 
 ### FASTA
 - Standard nucleotide FASTA format

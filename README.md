@@ -51,7 +51,7 @@ project-root/
 
 **Genomic sequences**: Retrieved from NCBI Genome database using the latest available genome assemblies as of April 2026. Reference sequence accessions are documented in the primary dataset (`data/raw/seqs_7sk.csv`).
 
-**Experimental data**: Sequencing data generated at University of East Anglia sequencing facility using Illumina paired-end sequencing (150 bp reads).
+**Experimental data**: Sequencing data generated at University of East Anglia sequencing facility using Illumina paired-end sequencing (150 bp reads). Raw sequencing data are available through the European Nucleotide Archive under project accession [PRJEB111759](https://www.ebi.ac.uk/ena/browser/view/PRJEB111759).
 
 **Plasmid sequences**: Designed and synthesized for this study, containing U6 and 7SK promoter constructs for comparative analysis.
 
@@ -62,7 +62,7 @@ All data in this repository are openly available under Creative Commons Attribut
 ### Format notes
 
 
-- **Primary data**: CSV format for interoperability
+- **Primary data**: CSV and TSV formats for interoperability
 - **Sequence data**: Standard FASTA and GenBank formats
 - **Raw sequencing**: FASTQ format with quality scores
 - **Checksums**: MD5 hashes provided for data integrity verification
