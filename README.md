@@ -20,8 +20,6 @@ project-root/
 ├── README.md                  # This file - project description and usage
 ├── CITATION.cff               # Machine-readable citation metadata  
 ├── LICENSE                    # Code (MIT) and data (CC BY 4.0) licenses
-├── CLAUDE.md                  # Claude Code AI assistant guidance
-├── fair-skill.md              # FAIR principles compliance guide
 ├── .Rprofile                  # renv activation hook
 ├── renv.lock                  # Exact R package versions
 │
