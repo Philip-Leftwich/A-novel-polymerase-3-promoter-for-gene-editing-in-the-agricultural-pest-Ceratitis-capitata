@@ -1,0 +1,73 @@
+# CRISPResso2 Analysis Configuration
+# Configuration file for 7SK vs U6 promoter comparison analysis
+
+# Experiment metadata
+experiment:
+  name: "7SK_vs_U6_promoter_comparison"
+  description: "CRISPR-Cas9 editing efficiency comparison between 7SK and U6 promoters in Ceratitis capitata"
+  target_gene: "white eye gene"
+  organism: "Ceratitis capitata"
+  date: "2026-04-20"
+
+# Analysis parameters
+primers:
+  forward: "ACGGCATATGACACAAAAACAG"
+  reverse: "TTCTGCGATAGCTTTTTCAACA"
+
+# Guide RNA sequence targeting white eye gene
+guide_rna: "CGGGTGAAGGGTTTATCGGG"
+
+# Reference sequences
+references:
+  wildtype:
+    name: "WILDTYPE"
+    sequence: "ACGGCATATGACACAAAAACAGAAAGTACAACGTGTCGATCAAGTTATACAGGACCTCTCGCTGGGTAAATGTCAGAATACGTTGATTGGCGTGCCGGGTCGGGTGAAGGGTTTATCGGGTGGCGAGCGTAAGCGACTGGCATTCGCCTCGGAGGCGTTAACCGATCCGCCGCTATTAATTTGCGATGAACCTACCTCGGGTTTGGACTCGTTCATGGCACACAGCGTCGTACAGGTGTTGAAAAAGCTATCGCAGAA"
+    description: "Benakeion wild-type white eye gene sequence"
+
+  mutant:
+    name: "WHITE_MUTANT"
+    sequence: "ACGGCATATGACACAAAAACAGAAAGTACAACGTGTCGATCAAGTTATACAGGACCTCTCGCTGGGTAAATGTCAGAATACGTTGATTGGCGTGCCGGGTGGCGAGCGTAAGCGACTGGCATTCGCCTCGGAGGCGTTAACCGATCCGCCGCTATTAATTTGCGATGAACCTACCTCGGGTTTGGACTCGTTCATGGCACACAGCGTCGTACAGGTGTTGAAAAAGCTATCGCAGAA"
+    description: "Consensus white-eye mutant allele with 21bp deletion"
+
+# Processing parameters
+processing:
+  threads: 8
+  n_processes: 8
+  min_length_after_trimming: 50
+  quality_threshold: 20
+  max_unqualified_percent: 40
+
+# Quality control thresholds
+quality_control:
+  min_frequency_alleles_plot: 0.2
+  write_detailed_allele_table: true
+  save_png_plots: true
+  expand_ambiguous_alignments: true
+
+# Input/Output paths (relative to project root)
+paths:
+  raw_data: "data/raw/sequencing_data"
+  processed_data: "data/processed"
+  results: "outputs/crispresso_results"
+  logs: "outputs/logs"
+
+# Expected input files
+input_files:
+  7SK:
+    R1: "7SK-gRNA_R1_001.fastq.gz"
+    R2: "7SK-gRNA_R2_001.fastq.gz"
+  U6:
+    R1: "U6-gRNA_R1_001.fastq.gz"
+    R2: "U6-gRNA_R2_001.fastq.gz"
+
+# Software versions
+software:
+  crispresso2: "v2.3.3"
+  fastp: "latest"
+  cutadapt: "latest"
+  python: "3.10"
+
+# HPC/Environment settings
+environment:
+  conda_env: "crispresso_trim"
+  module_load: "python/anaconda/2024.10/3.12.7"
